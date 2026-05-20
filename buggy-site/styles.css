@@ -1,0 +1,221 @@
+/* ============================================
+   AI駆動開発ワークショップ サポートポータル
+   ============================================ */
+
+:root {
+  --bg: #F7F3ED;
+  --card: #FFFFFF;
+  --accent: #CC785C;
+  --accent-dark: #A85840;
+  --text: #2C2A26;
+  --muted: #6B6560;
+  --border: #D9D2C8;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+/* ── ヘッダー ── */
+.site-header {
+  background: var(--accent);
+  color: #fff;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.logo-link {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: #fff;
+}
+.logo {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  display: inline-block;
+}
+.logo-subtitle {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+.desktop-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+.desktop-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+.desktop-nav a:hover {
+  text-decoration: underline;
+}
+
+/* ハンバーガーボタン（モバイル時のみ表示） */
+.menu-button {
+  display: none;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 6px;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.menu-button span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  margin: 4px 0;
+}
+
+.mobile-nav {
+  position: absolute;
+  top: 4.5rem;
+  right: 1rem;
+  background: var(--accent-dark);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+}
+.mobile-nav ul {
+  list-style: none;
+}
+.mobile-nav a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 0.3rem 0;
+}
+
+/* ── ヒーロー ── */
+.hero {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+.hero-text h1 {
+  font-size: 2rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+.hero-lead {
+  font-size: 1.05rem;
+  color: var(--muted);
+}
+
+/* ── 機能カード ── */
+.features {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+.features h2 {
+  font-size: 1.4rem;
+  border-left: 4px solid var(--accent);
+  padding-left: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+.card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.6rem;
+  color: var(--accent-dark);
+}
+.card p {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+/* バグ仕込み: マニュアルカードだけ本文の文字が異常に大きい */
+.card-grid .card:nth-child(1) p {
+  font-size: 2.2rem;
+}
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background 0.15s;
+}
+.btn:hover {
+  background: var(--accent-dark);
+}
+
+/* ── お知らせ ── */
+.notice {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 0 2rem 3rem;
+}
+.notice h2 {
+  font-size: 1.4rem;
+  border-left: 4px solid var(--accent);
+  padding-left: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+.notice ul {
+  list-style: none;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+}
+.notice li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.notice li:last-child {
+  border-bottom: none;
+}
+
+/* ── フッター ── */
+.site-footer {
+  background: var(--accent-dark);
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+}
+.site-footer p {
+  margin: 0.2rem 0;
+}
+
+/* ── レスポンシブ ── */
+@media (max-width: 768px) {
+  .desktop-nav { display: none; }
+  .menu-button { display: block; }
+  .mobile-nav { display: block; }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
