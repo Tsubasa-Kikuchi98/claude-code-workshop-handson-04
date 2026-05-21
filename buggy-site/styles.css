@@ -3,13 +3,13 @@
    ============================================ */
 
 :root {
-  --bg: #F7F3ED;
+  --bg: #EEF2F7;
   --card: #FFFFFF;
-  --accent: #CC785C;
-  --accent-dark: #A85840;
-  --text: #2C2A26;
-  --muted: #6B6560;
-  --border: #D9D2C8;
+  --accent: #3B6EA8;
+  --accent-dark: #2A5080;
+  --text: #1A2A3A;
+  --muted: #5A7090;
+  --border: #C8D4E0;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
